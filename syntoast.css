@@ -1,0 +1,43 @@
+.syntoast-container {
+  position: absolute;
+  right: 15px;
+  top: 0;
+}
+
+.syntoast-container div {
+  background-color: #ff0;
+  height: 36px;
+}
+
+.syntoast-container div.toast-symbol {
+  font-size: 12px;
+	font-family: "Times New Roman";
+	border-radius: 50%;
+	font-weight: bolder;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.syntoast-container div.toast-error {
+	color: white;
+	background-color: #b00020;
+}
+
+.syntoast-container div.toast-error:before {
+  content: 'x';
+}
+
+.syntoast-container div.toast-warning:before {
+  content: '!';
+}
+
+.syntoast-container div.toast-info:before {
+  content: 'i';
+}
+
+.syntoast-container div.toast-success:before {
+  content: '\002713';
+}
