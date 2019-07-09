@@ -1,6 +1,13 @@
 	<link rel="stylesheet" type="text/css" href="syntoast.css">
+  <style>
+    body {
+      background-color: #eee;
+      overflow-x: hidden;
+      
+    }
 
-  <body>
+    </style>
+  <body onload="toast.show({type: 'error', text: 'yolo_swag un super grand message lol test'}); toast.show({type: 'warning', text: 'yolo_swag'}); toast.show({type: 'success', text: 'yolo_swag'}); toast.show({type: 'info', text: 'yolo_swag'})">
     <a href="#" onclick="toast.show({type: 'error', text: 'yolo_swag'})">aa</a>
 
   </body>

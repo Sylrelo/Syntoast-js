@@ -1,33 +1,103 @@
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+.slideOutRight {
+  animation-name: slideOutRight;
+}
+
+.slideInRight {
+  animation-name: slideInRight;
+}
+
 .syntoast-container {
   position: absolute;
-  right: 15px;
+  right: 14px;
+  transition: all 1s;
   top: 0;
 }
 
-.syntoast-container div {
-  background-color: #ff0;
-  height: 36px;
+.syntoast-container div.toast {
+  background-color: #fff;
+  height: 52px;
+  width: 228px;
+  margin-top: 18px;
+  border-radius: 5px;
+  padding: 6px;
+  -webkit-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.75);
+  font-family: 'Verdana';
+  font-size: 14px;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+
+}
+
+.syntoast-container .toast div.toast-txt {
+  margin-left: 36px;
+  padding-top: 8px;
+  color: #222;
 }
 
 .syntoast-container div.toast-symbol {
-  font-size: 12px;
-	font-family: "Times New Roman";
+  float: left;
+  font-size: 14px;
+  line-height: 26px;
 	border-radius: 50%;
 	font-weight: bolder;
   width: 26px;
   height: 26px;
-  line-height: 26px;
   vertical-align: middle;
   text-align: center;
+  margin-top: 5px;
+  margin-left: 5px;
 }
 
 .syntoast-container div.toast-error {
-	color: white;
-	background-color: #b00020;
+	color: #fff;
+	background-color: #ff1744;
+}
+
+.syntoast-container div.toast-success {
+	color: #fff;
+	background: #13c823;
+}
+
+.syntoast-container div.toast-info {
+	color: #fff;
+	background-color: #3229CF;
+}
+
+.syntoast-container div.toast-warning {
+	color: #000;
+	background: #ffd54b;
 }
 
 .syntoast-container div.toast-error:before {
-  content: 'x';
+  content: '☓';
 }
 
 .syntoast-container div.toast-warning:before {
