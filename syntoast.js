@@ -69,6 +69,12 @@ var toast = {
     new_toast_icon.classList.add('toast-' + options.type)
 
     new_toast_text.innerHTML = options.text
+
+
+    new_toast_progress = document.createElement('div')
+    new_toast_progress.classList.add('toast-progress')
+    new_toast_progress.style.animationDuration = this._timeout + 'ms'
+    new_toast.append(new_toast_progress)
     new_toast.append(new_toast_text)
     new_toast.prepend(new_toast_icon)
 
