@@ -35,7 +35,6 @@
 .syntoast-container {
   position: absolute;
   right: 14px;
-  transition: all 1s;
   top: 0;
 }
 
@@ -51,8 +50,10 @@
   box-shadow: 0px 0px 10px -5px rgba(0,0,0,0.75);
   font-family: 'Verdana';
   font-size: 14px;
-  animation-duration: 1s;
+  animation-duration: .5s;
   animation-fill-mode: both;
+  overflow: hidden;
+  transition: all .5s;
 
 }
 

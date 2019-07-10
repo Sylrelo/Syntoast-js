@@ -20,6 +20,11 @@ var toast = {
     elem.classList.remove('slideInRight')
     elem.classList.add('slideOutRight')
     setTimeout(() => {
+      elem.style.height = '0px'
+      elem.style.padding = '0px'
+      elem.style.margin = '0px'
+    }, 500)
+    setTimeout(() => {
       elem.parentNode.removeChild(elem)
     }, 1000)
   },
@@ -30,6 +35,7 @@ var toast = {
       if (that._dismissed)
         return ;
         that.remove(elem)
+
     }, this._timeout);
   },
 
