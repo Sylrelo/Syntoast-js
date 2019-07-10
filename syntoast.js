@@ -25,7 +25,8 @@ var toast = {
       elem.style.margin = '0px'
     }, 500)
     setTimeout(() => {
-      elem.parentNode.removeChild(elem)
+      if (elem.parentNode)
+        elem.parentNode.removeChild(elem)
     }, 1000)
   },
 
@@ -35,7 +36,6 @@ var toast = {
       if (that._dismissed)
         return ;
         that.remove(elem)
-
     }, this._timeout);
   },
 
@@ -77,7 +77,7 @@ var toast = {
     new_toast.innerHTML = new_toast.innerHTML + '';
 
     new_toast.onclick = function() {
-      that._dismissed = true
+      //that._dismissed = true
       that.remove(this)
     }
     this.toast_container.prepend(new_toast)
