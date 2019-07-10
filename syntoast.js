@@ -64,8 +64,12 @@ var toast = {
 
     new_toast.classList.add('slideInRight')
 
+    new_toast.innerHTML = new_toast.innerHTML + '';
 
-
+    new_toast.onclick = function() {
+      that._dismissed = true
+      that.remove(this)
+    }
     this.toast_container.prepend(new_toast)
 
 
