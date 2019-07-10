@@ -34,19 +34,23 @@ var toast = {
   },
 
   show: function(options) {
-    if (options.type) {
+    var that = this
 
-    }
-    else
+    if (!options.type)
       options.type = 'infos'
 
-    var that = this
     if (options.timeout)
       this._timeout = options.timeout
     else
       this._timeout = 10000;
-    this.init()
 
+    if (!options.animation_in)
+      options.animation_in = 'slideInRight'
+    if (!options.animation_out)
+      options.animation_out = 'slideOutRight'
+
+
+    this.init()
 
     new_toast = document.createElement('div')
     new_toast.classList.add('toast')
@@ -71,10 +75,6 @@ var toast = {
       that.remove(this)
     }
     this.toast_container.prepend(new_toast)
-
-
-
     this.timeout(new_toast)
-    console.log('e')
   }
 }
