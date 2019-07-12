@@ -44,7 +44,7 @@ var toast = {
     var that = this
 
     if (!options.type)
-      options.type = 'infos'
+      options.type = 'info'
 
     if (options.timeout)
       this._timeout = options.timeout
@@ -59,7 +59,6 @@ var toast = {
     this.options = options;
 
     this.init()
-
     new_toast = document.createElement('div')
     new_toast.classList.add('toast')
 
@@ -86,7 +85,7 @@ var toast = {
     new_toast.onclick = function() {
       that.remove(this)
       if (options.callback)
-        callback()
+        options.callback()
     }
     this.toast_container.prepend(new_toast)
     this.timeout(new_toast)
