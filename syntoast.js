@@ -87,7 +87,6 @@ var toast = {
       new_toast.prepend(new_toast_icon)
     }
 
-
     new_toast_text.innerHTML = options.text
     new_toast_progress = document.createElement('div')
     new_toast_progress.classList.add('toast-progress')
