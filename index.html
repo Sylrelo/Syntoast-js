@@ -136,15 +136,18 @@ toast.show({
 <br />
 
 
-			<a href="#" class="button button-well" onclick="toast.show({text: 'Here she come', title: 'Eleven', timeout: 9000, customImage: 'https://fsmedia.imgix.net/7d/fc/51/98/98f6/4344/a65d/4eb79f6d896d/eleven-aka-jane-hopper-in-stranger-things-3.jpeg?rect=71%2C159%2C674%2C337&auto=format%2Ccompress&dpr=2&w=650'})">
-				Callback, custom timeout, custom image
+			<a href="#" class="button button-well" onclick="toast.show({text: 'Here she come', callback: function() {alert('You clicked !')}, title: 'Eleven', timeout: 9000, customImage: 'https://fsmedia.imgix.net/7d/fc/51/98/98f6/4344/a65d/4eb79f6d896d/eleven-aka-jane-hopper-in-stranger-things-3.jpeg?rect=71%2C159%2C674%2C337&auto=format%2Ccompress&dpr=2&w=650'})">
+				custom timeout, callback and image
 			</a>
 <pre><code class="language-js">
 toast.show({
-	type: 'Here she come',
 	title: 'Eleven',
 	text: 'Go back in the upside down !',
 	timeout: 9000,
+	callback: function()
+		{
+			alert('You clicked !')
+		},
 	customImage: 'https://fsmedia.imgix.net/7d/fc/51/98/98f6/4344/a65d/4eb79f6d896d/eleven-aka-jane-hopper-in-stranger-things-3.jpeg?rect=71%2C159%2C674%2C337&auto=format%2Ccompress&dpr=2&w=650'
 })
 </code></pre>

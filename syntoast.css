@@ -174,7 +174,7 @@
 }
 
 .syntoast-container div.toast-error:before {
-  content: '☓';
+  content: 'x';
 }
 
 .syntoast-container div.toast-warning:before {
