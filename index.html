@@ -1,22 +1,160 @@
-	<link rel="stylesheet" type="text/css" href="syntoast.css">
-  <style>
-    body {
-      background-color: #eee;
-      overflow-x: hidden;
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="syntoast.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism-okaidia.min.css">
+		<style>
+			@import url('https://fonts.googleapis.com/css?family=Spartan&display=swap');
+		body
+			{
+				background-color: #eee;
+				overflow-x: hidden;
+				text-align: center;
+				font-family: 'Spartan', sans-serif;
+			}
+			h1
+			{
+				font-weight: bold;
+			}
+			.separator
+			{
+				margin-left: auto;
+				margin-right: auto;
+				width: 300px;
+				height: 1px;
+				background-color: #000;
+				margin-top: 12px;
+				margin-bottom: 32px;
+			}
+			a.button
+			{
+				text-decoration: none;
+				width: 320px;
+				height: 46px;
+				line-height: 46px;
+				display: inline-block;
+				border-radius: 5px;
+				text-transform: uppercase;
+				font-size: 10px;
+			}
 
-    }
+			.button-green
+			{
+				background-color: rgb(76, 179, 114);
+				color: #fff;
+			}
 
-    </style>
-  <body onload="toast.show({type: 'error', timeout: 5000, text: 'yolo_swag un super grand message lol test'}); toast.show({type: 'warning', timeout: 2500, text: 'yolo_swag'}); toast.show({type: 'success', text: 'yolo_swag'}); toast.show({type: 'info', timeout: 1700, text: 'yolo_swag'})">
-    <a href="#" onclick="toast.show({type: 'error', timeout: 2500, title: 'Super titre', text: 'yolo_swag'}); toast.show({type: 'error', text: 'yolo_swag'})">aa</a>
+			.button-red
+			{
+				background-color: brown;
+				color: #fff;
+			}
+
+			.button-orange
+			{
+				background-color: rgb(220, 149, 19);
+				color: #fff;
+			}
+
+			.button-info
+			{
+				background-color: rgb(198, 198, 198);
+				color: black;
+			}
+
+			.button-well
+			{
+				background-color: rgb(89, 187, 215);
+				color: #fff;
+			}
+
+			code, pre
+			{
+				width: 420px !important;
+				margin-left: auto !important;
+				margin-right: auto !important;
+				border-radius: 5px !important;
+				font-size: 12px !important;
+				padding: 6px !important;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">
+			<h1>
+				Syntoast Demo
+			</h1>
+			<div class="separator"></div>
+
+			<a href="#" class="button button-green" onclick="toast.show({type: 'success', title: 'Success !', text: 'Eveything went well :)'})">
+				Success message
+			</a>
+			<pre><code class="language-js">
+toast.show({
+	type: 'success',
+	title: 'Success !',
+	text: 'Eveything went well :)'
+})
+
+</code></pre>
+<br />
+			<a href="#" class="button button-red" onclick="toast.show({type: 'error', title: 'Error !', text: 'Everything is in flame !'})">
+				Error message
+			</a>
+			<pre><code class="language-js">
+toast.show({
+	type: 'error',
+	title: 'Error !',
+	text: 'Everything is in flame !'
+})
+
+</code></pre>
+<br />
+			<a href="#" class="button button-orange" onclick="toast.show({type: 'warning', title: 'Be careful !', text: 'Someone is watching you...'})">
+				warning message
+			</a>
+<pre><code class="language-js">
+toast.show({
+	type: 'warning',
+	title: 'Be careful !',
+	text: 'Someone is watching you...'
+})
+
+</code></pre>
+<br />
+
+			<a href="#" class="button button-info" onclick="toast.show({type: 'info', title: 'Uh ?', text: 'The sky is beautiful today'})">
+				Info message
+			</a>
+<pre><code class="language-js">
+toast.show({
+	type: 'info',
+	title: 'Uh ?',
+	text: 'The sky is beautiful today'
+})
+
+</code></pre>
+<br />
 
 
+			<a href="#" class="button button-well" onclick="toast.show({text: 'Here she come', title: 'Eleven', timeout: 9000, customImage: 'https://fsmedia.imgix.net/7d/fc/51/98/98f6/4344/a65d/4eb79f6d896d/eleven-aka-jane-hopper-in-stranger-things-3.jpeg?rect=71%2C159%2C674%2C337&auto=format%2Ccompress&dpr=2&w=650'})">
+				Callback, custom timeout, custom image
+			</a>
+<pre><code class="language-js">
+toast.show({
+	type: 'Here she come',
+	title: 'Eleven',
+	text: 'Go back in the upside down !',
+	timeout: 9000,
+	customImage: 'https://fsmedia.imgix.net/7d/fc/51/98/98f6/4344/a65d/4eb79f6d896d/eleven-aka-jane-hopper-in-stranger-things-3.jpeg?rect=71%2C159%2C674%2C337&auto=format%2Ccompress&dpr=2&w=650'
+})
+</code></pre>
 
-		<button onclick="toast.show({text: 'lele', callback: function() {alert('l')}})">test callback</button>
-
-
-		<br>
-
-		<button onclick="toast.show({text: 'Here she come', title: 'Eleven', customImage: 'https://fsmedia.imgix.net/7d/fc/51/98/98f6/4344/a65d/4eb79f6d896d/eleven-aka-jane-hopper-in-stranger-things-3.jpeg?rect=71%2C159%2C674%2C337&auto=format%2Ccompress&dpr=2&w=650'})">with custom image</button>
+			<br />
+		</div>
+		<script src="syntoast.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-core.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-javascript.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/autoloader/prism-autoloader.min.js"></script>
 	</body>
-  <script src="syntoast.js"></script>
+</html>
+
